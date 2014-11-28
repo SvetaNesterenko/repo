@@ -171,9 +171,20 @@
                     					recipientName = data.bundle
                     							.getNameForEmail(singleResponse.recipientEmail);
                     				}
+                                    
+                                    String style = "";
+                                    if (recipientName.equals("You") && giverName.equals("You")) {
+                                        style = "background-image: linear-gradient(to bottom, #66cccc 0px, #66cccc 100%)";    
+                                    }
+                                    else if (recipientName.equals("You")) {
+                                        style = "background-image: linear-gradient(to bottom, #339966 0px, #339966 100%)";    
+                                    }
+                                    else if (giverName.equals("You")) {
+                                        style = "background-image: linear-gradient(to bottom, #9999ff 0px, #9999ff 100%)";
+                                    }
                     %>
                     <div class="panel panel-primary">
-                        <div class="panel-heading"><b>To:</b> <%=recipientName%></div>
+                        <div class="panel-heading" style = "<%=style%>" ><b>To:</b> <%=recipientName%></div>
                         <table class="table">
                             <tbody>    
                         <%
